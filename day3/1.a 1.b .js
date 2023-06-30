@@ -29,7 +29,7 @@ var result=Object.keys(obj1).length !==Object.keys(obj2)
 
 var result1=Object.keys(obj1).length ==Object.keys(obj2)
 // console.log(Object.keys(obj1).length )
-// console.log(Object.keys(obj2).length)
+// console.log(Object.keys(obj2).length)  
 console.log(result)
 console.log(result1)
  
