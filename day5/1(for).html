@@ -1,0 +1,47 @@
+<html>
+    <head>
+      <title>XMLHttpRequest Example</title>
+    </head>
+    <body>
+      <script>
+      //Create a new XMLHttpRequest object
+        var xhr = new XMLHttpRequest();
+  
+        //Define HTTP method and URL
+        var method = "GET";
+        var url = "https://date.nager.at/api/v2/publicholidays/2020/US";
+  
+        //Open the request
+        xhr.open(method, url);
+  
+        xhr.onload = function () {
+          // debugger;
+          if (xhr.status === 200) {
+            //Request was successful
+            //console.log(xhr.responseText);
+            var details = JSON.parse(xhr.responseText); // JSON.parse-->which is used to view the given url link json string to JSON object
+            //  console.log(details) // to view the object of JSON
+
+            for(var i=0;i<details.length;i++){
+                          
+                // console.log(details[i]) --->to view the given url object using for loop
+
+                 console.log(details[i].localName) 
+
+                 console.log(details[i].date)  
+
+                
+                
+            }
+            
+          } else {
+            //Request failed
+            console.log("Request failed", xhr.status);
+          }
+        };
+  
+        //send the request
+        xhr.send();
+      </script>
+    </body>
+  </html>
