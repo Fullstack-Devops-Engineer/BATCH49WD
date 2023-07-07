@@ -1,0 +1,63 @@
+// DAY : 7 - ARRAY METHODS
+
+// 1.Solving problems using array functions on rest countries data (https://restcountries.com/v3.1/all)
+
+    //  a.Get all the countries from Asia continent /region using Filter function
+
+<html>
+    <head>
+      <title>XMLHttpRequest Example</title>
+    </head>
+    <body>
+      <script>
+      //Create a new XMLHttpRequest object
+        var xhr = new XMLHttpRequest();
+  
+        //Define HTTP method and URL
+        var method = "GET";
+        var url = "https://restcountries.com/v3.1/all";
+  
+        //Open the request
+        xhr.open(method, url);
+  
+        xhr.onload = function () {
+          // debugger;
+          if (xhr.status === 200) {
+            //Request was successful
+            //console.log(xhr.responseText);
+            var details = JSON.parse(xhr.responseText);
+ 
+          
+    
+        
+
+       
+console.log(details)
+
+
+
+            
+    //         details.forEach(function(details) {
+    // console.log(details);
+    //         });
+
+
+            
+            // JSON.parse-->which is used to view the given url link json string to JSON object
+            //  console.log(details) // to view the object of JSON
+            // for(var i=0;i<details.length;i++){
+            //     console.log(details[i].flag) //ans: to view all the country flags in object of the given url
+            // }
+
+       
+          } else {
+            //Request failed
+            console.log("Request failed", xhr.status);
+          }
+        };
+  
+        //send the request
+        xhr.send();
+      </script>
+    </body>
+  </html>
