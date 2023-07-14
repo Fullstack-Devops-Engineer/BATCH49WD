@@ -26,16 +26,18 @@
             
             var countryData = JSON.parse(xhr.responseText);
 
-
-            const Asia=countryData.filter((element)=>{
-        if(element.region==='Asia'){
-            return element.name;
-        }
+            const population=countryData.filter((element)=>{
+        return element.population<200000;
     })
-    console.log(Asia);
-    
-           
-          } else {
+    console.log(population);
+}
+         
+
+                 
+// console.log(countryData)
+
+       
+           else {
             //Request failed
             console.log("Request failed", xhr.status);
           }

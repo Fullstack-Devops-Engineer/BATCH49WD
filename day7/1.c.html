@@ -1,5 +1,4 @@
 // DAY : 7 - ARRAY METHODS
-
  
 
 <html>
@@ -26,16 +25,15 @@
             
             var countryData = JSON.parse(xhr.responseText);
 
+            countryData.forEach((element)=>{
+            console.log(element.name,element.capital,element.flag);})
+            }
 
-            const Asia=countryData.filter((element)=>{
-        if(element.region==='Asia'){
-            return element.name;
-        }
-    })
-    console.log(Asia);
-    
-           
-          } else {
+                 
+// console.log(countryData)
+
+       
+           else {
             //Request failed
             console.log("Request failed", xhr.status);
           }
